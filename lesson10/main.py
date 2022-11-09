@@ -38,80 +38,121 @@
 
 #task5
 
-a = '12345'
+# a = '12345'
+# mas = []
+# stages = ['''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  / \  |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  /    |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|   |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#   |   |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#       |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#       |
+#       |
+#       |
+#       |
+# =========
+# ''']
+# stages = stages[::-1]
+# for i in range(len(a)):
+#     mas.append(a[i])
+# print(mas)
+# massiv = ['_']*len(mas)
+# print(massiv)
+# for i in range(7):
+#     b = input()
+#     for j in range(len(mas)):
+#         if b == mas[j]:
+#             massiv[j] = b
+#     print(massiv)
+#     print(stages[i])
+#     if mas == massiv:
+#         print('you are win')
+#         break
+# if mas != massiv:
+#     print('you are lose')
+
+#bacles
+
+from random import randint
+import time
 mas = []
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-stages = stages[::-1]
-for i in range(len(a)):
-    mas.append(a[i])
-print(mas)
-massiv = ['_']*len(mas)
-print(massiv)
-for i in range(7):
-    b = input()
-    for j in range(len(mas)):
-        if b == mas[j]:
-            massiv[j] = b
-    print(massiv)
-    print(stages[i])
-    if mas == massiv:
-        print('you are win')
+# while True:
+#     mas.append('всё плохо😔😢😭')
+#     print(mas)
+#     time.sleep(2)
+lenght = 3
+life = 10
+a = randint(100,999)
+a = str(a)
+a = list(a)
+print(a)
+while life:
+    is_guess = False
+    print('='*10)
+    print('lifes:','❤'*life)
+    guess = input()
+    if len(guess) != 3 or not guess.isdigit():
+        print("ti tupoy?")
+        continue
+    if list(guess) == a:
+        print("ti umniy")
         break
-if mas != massiv:
-    print('you are lose')
+    for i in range(0, lenght):
+        if guess[i] == a[i]:
+            print('beagles')
+            is_guess = True
+            break
+    if not is_guess:
+        for i in guess:
+            if i in a:
+                is_guess = True
+                print('letual')
+                break
+    if not is_guess:
+        print('pica')
+    life -= 1
