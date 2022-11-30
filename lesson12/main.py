@@ -17,7 +17,15 @@
 
 #task 3
 
-lst1 = [10, 20, 30, 40]
-lst2 = [100, 200, 300, 400]
-for i in range(len(a)):
-    print(lst1[i]+' '+lst)
+# lst1 = [10, 20, 30, 40]
+# lst2 = [100, 200, 300, 400]
+# for i in range(len(lst1)):
+#     print(lst1[i],' ',lst2[-(i+1)])
+
+#task 4
+
+list1 = ["Михаил", "", "Григорий", "Александр", "", "Степан"]
+for i in range(len(list1)):
+    if list1[i] == "":
+        list1.pop(i)
+print(list1)

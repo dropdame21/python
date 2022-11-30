@@ -160,6 +160,33 @@ calText += (' ' * 34) + MONTHS[month - 1] + ' ' + str(year) + '\n'
 
 for i in range(7):
     calText += DAYS[i] + ' '
-print(calText)
+calText += '\n'
 weekSeparator = ('+----------' * 7) + '\n'
-blankRow = ('          ') + '|\n'
+blankRow = ('|          ') + '|\n'
+
+currentDate = datetime.date(year, month, 1)
+while currentDate.weekday() != 0:
+    currentDate -= datetime.timedelta(days=1)
+
+while True:
+    calText += weekSeparator
+    dayNumberRow = ''
+    for i in range(7):
+        dayNumberLable = str(currentDate.day).rjust(2)
+        dayNumberRow += '|' + dayNumberLable + (' ' * 8)
+        currentDate += datetime.timedelta(days=1)
+    calText += "|\n"
+    calText += dayNumberRow
+    for i in range(3):
+        calText += blankRow
+
+
+    if currentDate.month != month:
+        break
+calText += weekSeparator
+print(calText)
+
+calendarik = 'calendar_{}_{}.txt'.format(month, year)
+with open(calendarik, "w") as file:
+    file.write(calText)
+print('all is save in ' + calendarik)
