@@ -80,13 +80,87 @@ from random import randint
 # print(len(set))
 
 #task 1
+#
+# a = int(input())
+# dict = {}
+# for i in range(a):
+#     b , a = input().upper().split(" ")
+#     if b not in dict:
+#         dict[b] = [a]
+#     else:
+#         dict[b].append(a)
+# print(dict)
 
-a = int(input())
-dict = {}
-for i in range(a):
-    b , a = input().upper().split(" ")
-    if b not in dict:
-        dict[b] = [a]
-    else:
-        dict[b].append(a)
+#----------------------------------------------
+
+# a = input()
+# dict = {}
+# symbols = "!,.?:;"
+# mas = ""
+# for i in range(len(a)):
+#     if a[i] not in symbols:
+#         mas+=a[i]
+# mas = mas.split()
+# for i in mas:
+#     dict[i] = 0
+# for i in mas:
+#     if i in dict:
+#         dict[i] += 1
+# print(dict)
+#
+# maxi = max(dict.values())
+# print(maxi)
+# for key, value in dict.items():
+#     if value == maxi:
+#         print(key, value)
+#         break
+
+#---------------------------------------------
+
+# a = randint(1,6) + randint(1,6)
+# b = 0
+# if a % 2 == 0:
+#     b = 1
+# stavka1 = int(input())
+# stavka2 = int(input())
+# bank = stavka1+stavka2
+# bank = (bank/10)*9
+# c1 = int(input())
+# c2 = int(input())
+# print(bank)
+# if b == c1:
+#     if b == c2:
+#         print("score player1",bank/2)
+#         print("score player2", bank/2)
+#     else:
+#         print("score player1",bank)
+# elif b == c2:
+#     if b == c1:
+#         print("score player1", bank / 2)
+#         print("score player2", bank / 2)
+#     else:
+#         print("score player2", bank)
+# else:
+#     print("score player1", 0)
+#     print("score player2", 0)
+
+#------------------------------------------------------
+
+# dict = {}
+# for i in range(1,7):
+#     for j in range(1,7):
+#         if i+j not in dict:
+#             dict[i+j] = [(i,j)]
+#         else:
+#             dict[i+j].append((i,j))
+# for i in dict:
+#     print(f"{i}:{dict[i]}")
+
+#---------------------------------------------------------
+
+dict = {1:1,2:2,3:3,4:4,5:5}
+dict[1], dict[5] = dict[5], dict[1]
+print(dict)
+del dict[2]
+dict["new_key"]="new_values"
 print(dict)
