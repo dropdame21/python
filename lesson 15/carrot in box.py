@@ -63,3 +63,21 @@ while True:
         print(f"{name2} сообщает, что в его коробке {box1}")
     else:
         print(f"{name2} сообщает, что в его коробке {box2}")
+
+    change = input("menayechsya (yes) ili net (no)?")
+    if change == "yes":
+        box1,box2 = box2,box1
+        input(f"{name1} close your glaza")
+
+        if box2 == 'CARROT':
+            boxic2 = box_carrot.format(COLOR2.center(13)).split('\n')
+        else:
+            boxic2 = box_empty.format(COLOR2.center(13)).split('\n')
+    else:
+        break
+print("======================= resultat ========================")
+print(generation_boxes(box1,box2))
+if box1 == "CARROT":
+    print(name1,"is winner")
+else:
+    print(name2,"is winer")
