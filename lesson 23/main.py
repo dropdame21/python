@@ -41,30 +41,30 @@ class Wall:
 df = Wall(3)
 print(df.print_figure())
 
-ntitled
-A
-GUEST
-MAR
-8
-TH, 2023
-1
-0
-NEVER
-ADD
-COMMENT
-Not
-a
-member
-of
-Pastebin
-yet? Sign
-Up, it
-unlocks
-many
-cool
-features!
-3.62
-KB | None |
+# ntitled
+# A
+# GUEST
+# MAR
+# 8
+# TH, 2023
+# 1
+# 0
+# NEVER
+# ADD
+# COMMENT
+# Not
+# a
+# member
+# of
+# Pastebin
+# yet? Sign
+# Up, it
+# unlocks
+# many
+# cool
+# features!
+# 3.62
+# KB | None |
 
 # class Person:  # объявление класса
 #     def __init__(self, imya, vozrast):  # метод инициализации
