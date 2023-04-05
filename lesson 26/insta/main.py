@@ -3,13 +3,20 @@ import random
 
 
 def prez():
-    us = random.choice(users)
     print(f"login: {us.login}")
     print(f"name: {us.name}")
     print(f"surname: {us.surname}")
     print(f"posts: {us.posts}")
 
+def select_user():
+    global us
+    while True:
+        us = random.choice(users)
+        if us.login != current.login:
+            break
+
 def session():
+    select_user()
     while True:
         prez()
         print("""[Возможные действия]: 
@@ -21,7 +28,14 @@ def session():
         if answer == "OUT":
             break
         elif answer == "СЛЕДУЮЩИЙ":
-            pass
+            select_user()
+        elif answer == "SUBSCRIBE":
+            current.subscribe += 1
+            us.subsscribers += 1
+
+
+
+
 
 
 
@@ -35,4 +49,6 @@ l = input("login: ")
 p = input("password: ")
 for i in users:
     if i.log_in(l,p) == True:
+        current = i
         session()
+print(a.name)
