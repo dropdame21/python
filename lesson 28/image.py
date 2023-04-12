@@ -1,0 +1,10 @@
+from tkinter import *
+window = Tk()
+window.geometry("900x900")
+img = PhotoImage(file="putin.png")
+lbl = Label(image=img)
+lbl.pack()
+phot = img.zoom(7,1)
+lbl1 = Label(image=phot)
+lbl1.pack()
+window.mainloop()
